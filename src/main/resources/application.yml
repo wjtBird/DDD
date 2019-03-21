@@ -1,0 +1,23 @@
+#可用于切换环境（开发，测试，正式）
+#部署命令 java -jar jar包路径 --spring.profiles.active=dev或者test或者prod
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      #防止中文乱码
+      force: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+mybatis:
+  mapperLocations: classpath*:mapper/**/*.xml
+  typeAliasesPackage: com.puppy.lottery.entity
+  configuration:
+    #mybatis开启驼峰自动转换
+    map-underscore-to-camel-case: true
+    #cache-enabled: false
+    #local-cache-scope: statement
